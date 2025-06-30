@@ -16,7 +16,7 @@ function Experience() {
           <div className="timeline-dot"></div>
           <div className="timeline-content">
             <h4>Rookie UI/UX Designer</h4>
-            <p>Created intuitive wireframes and visual mockups in Figma ONLY :D.</p>
+            <p>Created intuitive wireframes and visual mockups in Figma ONLY.</p>
           </div>
         </div>
       </div>
