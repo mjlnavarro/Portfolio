@@ -1,0 +1,61 @@
+.card-section {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2rem;
+  border-radius: 16px;
+  margin: 2rem auto;
+  max-width: 900px;
+  backdrop-filter: blur(3px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-section:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-section h3 {
+  font-size: 1.75rem;
+  color: var(--accent-color, #00ccff);
+  margin-bottom: 1rem;
+}
+
+.card-section p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--text-color, #ccc);
+}
+
+/* Light Theme Overrides */
+body.light-theme .card-section {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .card-section h3 {
+  color: var(--accent-light, #6c63ff);
+}
+
+body.light-theme .card-section p {
+  color: #444;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem 1rem;
+  margin-top: 1.5rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.info-grid li {
+  font-size: 0.95rem;
+  color: var(--text-color, #ccc);
+}
+
+body.light-theme .info-grid li {
+  color: #333;
+}

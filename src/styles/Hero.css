@@ -1,0 +1,151 @@
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  background: radial-gradient(circle at center, #1d1f3f 0%, #0b0c1e 100%);
+  color: #f3f3f3;
+}
+
+.hero {
+  height: 100vh;
+  background: radial-gradient(circle at center, #0b0c1e 0%, #090a14 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero-content {
+  max-width: 800px;
+  width: 700px;
+  max-width: 90%;
+  margin-top: 6rem;
+  padding: 3rem 4rem;
+  border-radius: 50px;
+  background-color: var(--card-bg);
+  color: var(--card-text);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.25);
+  animation: fadeInUp 1.2s ease both;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid var(--cursor-color);
+  animation: typing 2s steps(20, end), blink 0.75s step-end infinite;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  opacity: 0.85;
+  margin-bottom: 1.25rem;
+  animation: fadeIn 2s ease 1.5s both;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  animation: fadeIn 2s ease 2s both;
+}
+
+.stat {
+  text-align: center;
+  cursor: help;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #00e0ff;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.95rem;
+  opacity: 0.7;
+  margin-top: 0.25rem;
+}
+
+.typing-text {
+  font-family: monospace;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--cursor-color);
+  width: fit-content;
+  animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+}
+
+.subheading {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  color: #ccc;
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body.light-theme .hero-section p,
+body.light-theme .subheading {
+  color: #444;
+}
+
+/*Theme Toggle*/
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+  color: #00e0ff;
+}
+
+/*Animations*/
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

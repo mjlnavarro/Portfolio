@@ -1,0 +1,105 @@
+.card-section.contact-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Contact Form Layout */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Input & Textarea Styling */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-color, #fdfdfd);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  max-height: 180px;
+  min-height: 100px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #888;
+}
+
+/* Light Theme Overrides */
+body.light-theme .contact-form input,
+body.light-theme .contact-form textarea {
+  background-color: #fff;
+  color: #1a1a1a;
+  border: 1px solid #ccc;
+}
+
+body.light-theme .contact-form input::placeholder,
+body.light-theme .contact-form textarea::placeholder {
+  color: #666;
+}
+
+/* Submit Button */
+.submit-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #00ccff, #a785ff);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  align-self: center;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.3),
+              0 0 16px rgba(160, 130, 255, 0.2);
+}
+
+body.light-theme .submit-btn {
+  background: linear-gradient(135deg, #6c63ff, #ff6b81);
+  color: #fff;
+}
+
+/* Contact Details */
+.contact-details {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.contact-details p button {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+/* Copied Message */
+.copied-message {
+  color: #00ccff;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

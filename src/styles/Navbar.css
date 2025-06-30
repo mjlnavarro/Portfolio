@@ -1,0 +1,70 @@
+/*Navbar Container*/
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(11, 12, 30, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/*Navigation Links*/
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a,
+.theme-toggle {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.15rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.theme-toggle:hover {
+  color: #00e0ff;
+}
+
+/*Theme Toggle Button*/
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.15rem;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+  color: #00e0ff;
+}
+
+/*Light Theme Overrides*/
+body.light-theme .navbar {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #1a1a1a;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+body.light-theme .nav-links a,
+body.light-theme .theme-toggle {
+  color: #1a1a1a;
+}
+
+body.light-theme .nav-links a:hover,
+body.light-theme .theme-toggle:hover {
+  color: #007acc;
+}

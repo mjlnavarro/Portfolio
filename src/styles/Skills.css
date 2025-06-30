@@ -1,0 +1,41 @@
+.list-info {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.list-info li {
+  margin-bottom: 0.5rem;
+}
+
+.skill-meters {
+  margin-top: 1.5rem;
+}
+
+.skill {
+  margin-bottom: 0.75rem;
+}
+
+.skill span {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.meter {
+  height: 10px;
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.meter > div {
+  height: 100%;
+  background: linear-gradient(to right, #00ccff, #a785ff);
+  border-radius: 20px;
+  transition: width 1s ease-out;
+}
+
+body.light-theme .meter > div {
+  background: linear-gradient(to right, #6c63ff, #ff6b81);
+}
