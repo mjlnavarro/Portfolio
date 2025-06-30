@@ -7,10 +7,10 @@ function Gallery() {
       <h3>Certificates & Gallery</h3>
       <GalleryLightbox
         images={[
-          "../images/jin1.jpg",
-          "../images/jin2.jpg",
-          "../images/jin3.jpg",
-          "../images/jin4.jpg",
+          "./public/images/jin1.jpg",
+          "./public/images/jin2.jpg",
+          "./public/images/jin3.jpg",
+          "./public/images/jin4.jpg",
         ]}
       />
     </section>
