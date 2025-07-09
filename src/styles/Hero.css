@@ -1,3 +1,9 @@
+/* Font Setup */
+:root {
+  --font-heading: 'Satoshi Bold';
+  --font-body: 'Satoshi Regular';
+}
+
 .hero-section {
   display: flex;
   align-items: center;
@@ -6,13 +12,13 @@
   text-align: center;
   flex-direction: column;
   padding: 2rem 1rem;
-  background: radial-gradient(circle at center, #1d1f3f 0%, #0b0c1e 100%);
+  background: none;
   color: #f3f3f3;
+  font-family: var(--font-body);
 }
 
 .hero {
-  height: 100vh;
-  background: radial-gradient(circle at center, #0b0c1e 0%, #090a14 100%);
+  background: none;
   color: white;
   display: flex;
   align-items: center;
@@ -21,7 +27,7 @@
   padding: 2rem;
   position: relative;
   overflow: hidden;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
 }
 
 .hero-content {
@@ -44,8 +50,10 @@
   margin-bottom: 1rem;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid var(--cursor-color);
-  animation: typing 2s steps(20, end), blink 0.75s step-end infinite;
+  border-right: 3px solid var(--cursor-color);
+  font-family: var(--font-heading);
+  animation: typing 2s steps(20, end) forwards, blink 0.75s step-end infinite;
+  transition: transform 0.3s ease;
 }
 
 .hero-subtitle {
@@ -54,6 +62,7 @@
   opacity: 0.85;
   margin-bottom: 1.25rem;
   animation: fadeIn 2s ease 1.5s both;
+  font-family: var(--font-body);
 }
 
 .hero-stats {
@@ -72,7 +81,8 @@
 .stat-number {
   font-size: 2rem;
   font-weight: 600;
-  color: #00e0ff;
+  color: #000000;
+  font-family: var(--font-heading);
 }
 
 .stat-label {
@@ -80,6 +90,7 @@
   font-size: 0.95rem;
   opacity: 0.7;
   margin-top: 0.25rem;
+  font-family: var(--font-body);
 }
 
 .typing-text {
@@ -95,6 +106,7 @@
   font-size: 1.1rem;
   margin-top: 0.5rem;
   color: #ccc;
+  font-family: var(--font-body);
 }
 
 .parallax {
@@ -121,7 +133,7 @@ body.light-theme .subheading {
 
 .theme-toggle:hover {
   transform: scale(1.2);
-  color: #00e0ff;
+  color: #000000;
 }
 
 /*Animations*/
@@ -131,6 +143,7 @@ body.light-theme .subheading {
 }
 
 @keyframes blink {
+  0%, 100% { border-color: var(--cursor-color); }
   50% { border-color: transparent; }
 }
 
@@ -148,4 +161,48 @@ body.light-theme .subheading {
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* Monochrome Inversion: Dark Theme */
+body.dark-theme .hero-content,
+body.dark-theme .hero-title,
+body.dark-theme .hero-subtitle,
+body.dark-theme .stat-number,
+body.dark-theme .stat-label,
+body.dark-theme .subheading {
+  background: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+  box-shadow: none !important;
+}
+
+/* Monochrome Inversion: Light Theme */
+body.light-theme .hero-content,
+body.light-theme .hero-title,
+body.light-theme .hero-subtitle,
+body.light-theme .stat-number,
+body.light-theme .stat-label,
+body.light-theme .subheading {
+  background: #fff !important;
+  color: #000 !important;
+  border-color: #000 !important;
+  box-shadow: none !important;
+}
+.typing-name {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #000;
+  animation: typing 2s steps(10, end) forwards, blink 0.75s step-end infinite;
+  font-family: var(--font-heading);
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { border-color: #000; }
+  50% { border-color: transparent; }
 }

@@ -24,11 +24,10 @@ function Landing({ onEnter }) {
       onClick={handleClick}
     >
       <div className="animated-background" />
-      <div className="background-text">HELLO</div>
+      <div className="background-text">Hello</div>
       <div className="center-box">
         <h1 className="landing-title">JIN LAURENCE F. NAVARRO</h1>
         <p className="landing-subtitle">COMPUTER ENGINEERING STUDENT</p>
-        <p className="landing-instruction">Click anywhere to enter</p>
       </div>
     </div>
   );

@@ -13,8 +13,14 @@
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
   cursor: pointer;
+  filter: none !important;
+}
+
+.gallery-img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1) !important;
 }
 
 .lightbox-overlay {
@@ -30,10 +36,18 @@
 }
 
 .lightbox-image {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 600px;
+  width: 90%;
+  height: auto;
   border-radius: 10px;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: none !important;
+}
+
+.lightbox-image:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1) !important;
 }
 
 @keyframes fadeIn {

@@ -1,23 +1,30 @@
-/*Navbar Container*/
+/* Navbar Container */
 .navbar {
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(11, 12, 30, 0.95);
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 2rem 4rem;
   z-index: 1000;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: padding 0.3s ease, background-color 0.3s ease;
 }
 
-/*Navigation Links*/
+/* Shrink on scroll */
+.navbar.shrink {
+  padding: 1rem 3rem;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Navigation Links */
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 7rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -28,33 +35,62 @@
   color: white;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.15rem;
-  transition: color 0.3s ease;
+  font-size: 1.5rem;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.nav-links a:hover,
-.theme-toggle:hover {
-  color: #00e0ff;
+/* Hover underline */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
-/*Theme Toggle Button*/
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Click scale */
+.nav-links a:active {
+  transform: scale(0.95);
+}
+
+/* Active link highlight */
+.nav-links a.active {
+  color: inherit;
+}
+
+.nav-links a.active::after {
+  transform: scaleX(1);
+  background-color: #868686;
+}
+
+/* Theme Toggle Button */
 .theme-toggle {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1.15rem;
+  font-size: 1.5rem;
   color: inherit;
   transition: transform 0.2s ease;
 }
 
 .theme-toggle:hover {
   transform: scale(1.2);
-  color: #00e0ff;
+  color: #fff;
 }
 
-/*Light Theme Overrides*/
+/* Light Theme Overrides */
 body.light-theme .navbar {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: transparent;
   color: #1a1a1a;
   border-bottom: 1px solid #e0e0e0;
 }
@@ -66,5 +102,33 @@ body.light-theme .theme-toggle {
 
 body.light-theme .nav-links a:hover,
 body.light-theme .theme-toggle:hover {
-  color: #007acc;
+  color: #000;
+}
+
+body.light-theme .nav-links a.active {
+  color: inherit;
+}
+
+body.light-theme .nav-links a.active::after {
+  background-color: #868686;
+}
+
+/* Monochrome Inversion: Dark Theme */
+body.dark-theme .navbar,
+body.dark-theme .nav-links a,
+body.dark-theme .theme-toggle {
+  background: transparent !important;
+  color: #fff !important;
+  border-color: #fff !important;
+  box-shadow: none !important;
+}
+
+/* Monochrome Inversion: Light Theme */
+body.light-theme .navbar,
+body.light-theme .nav-links a,
+body.light-theme .theme-toggle {
+  background: transparent !important;
+  color: #000 !important;
+  border-color: #000 !important;
+  box-shadow: none !important;
 }

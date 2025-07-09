@@ -10,24 +10,6 @@ function Skills() {
         <li title="Ctrl+Z is my best friend ⚙️"><strong>Tech:</strong> Git, VS Code, Microsoft Office, C++</li>
         <li title="Can pitch an idea and code it too."><strong>Soft Skills:</strong> Communication, Flexibility, Collaboration</li>
       </ul>
-      <div className="skill-meters">
-        <div className="skill">
-          <span>HTML</span>
-          <div className="meter"><div style={{ width: "60%" }} /></div>
-        </div>
-        <div className="skill">
-          <span>CSS</span>
-          <div className="meter"><div style={{ width: "70%" }} /></div>
-        </div>
-        <div className="skill">
-          <span>Python</span>
-          <div className="meter"><div style={{ width: "60%" }} /></div>
-        </div>
-        <div className="skill">
-          <span>React</span>
-          <div className="meter"><div style={{ width: "50%" }} /></div>
-        </div>
-      </div>
     </section>
   );
 }

@@ -15,7 +15,7 @@
   flex: 1 1 200px;
   text-align: center;
   backdrop-filter: blur(3px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.8s ease, box-shadow 0.3s ease;
 }
 
 .stat-box:hover {
@@ -26,7 +26,7 @@
 .stat-box h3 {
   font-size: 2rem;
   margin-bottom: 0.2rem;
-  color: #00ccff;
+  color: var(--text-color);
 }
 
 .stat-box p {
@@ -34,7 +34,7 @@
   color: #ccc;
 }
 
-/*Light Theme Overrides*/
+/* Light Theme Overrides */
 body.light-theme .stat-box {
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.05);
@@ -42,9 +42,31 @@ body.light-theme .stat-box {
 }
 
 body.light-theme .stat-box h3 {
-  color: #6c63ff;
+  color: #000;
 }
 
 body.light-theme .stat-box p {
   color: #444;
+}
+
+/* Monochrome Inversion: Dark Theme */
+body.dark-theme .stat-box,
+body.dark-theme .stat-box h3,
+body.dark-theme .stat-box p {
+  background: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+  box-shadow: none !important;
+  filter: grayscale(100%) contrast(100%);
+}
+
+/* Monochrome Inversion: Light Theme */
+body.light-theme .stat-box,
+body.light-theme .stat-box h3,
+body.light-theme .stat-box p {
+  background: #fff !important;
+  color: #000 !important;
+  border-color: #000 !important;
+  box-shadow: none !important;
+  filter: grayscale(100%) contrast(100%);
 }

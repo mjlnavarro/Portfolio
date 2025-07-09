@@ -1,39 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import Landing from "./pages/Landing";
 import "./styles/global.css";
-import "./styles/Landing.css";
 
-function Landing({ onFadeOut }) {
-  const [isFading, setIsFading] = useState(false);
+function Root() {
+  const [hasEntered, setHasEntered] = useState(false);
 
-  useEffect(() => {
-    const handleClick = () => {
-      setIsFading(true);
+  const handleEnter = () => {
+    setHasEntered(true);
+    const mainSection = document.getElementById("main");
+    if (mainSection) {
       setTimeout(() => {
-        onFadeOut();
-      }, 800);
-    };
-
-    document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
-  }, [onFadeOut]);
+        mainSection.scrollIntoView({ behavior: "smooth" });
+      }, 600); // match swipe-up animation duration
+    }
+  };
 
   return (
-    <div className={`landing-container ${isFading ? "fade-out" : ""}`}>
-      <div className="background-text">HELLO</div>
-      <div className="center-box">
-        <h1>JIN LAURENCE F. NAVARRO</h1>
-        <p>COMPUTER ENGINEERING STUDENT</p>
-      </div>
-    </div>
+    <>
+      <Landing onEnter={handleEnter} />
+      <App />
+    </>
   );
 }
 
-function Root() {
-  const [hasClicked, setHasClicked] = useState(false);
-  return hasClicked ? <App /> : <Landing onFadeOut={() => setHasClicked(true)} />;
-}
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <Root />
-);
+ReactDOM.createRoot(document.getElementById("root")).render(<Root />);

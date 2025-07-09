@@ -38,7 +38,7 @@ function Hero() {
             <span className="stat-label">Tech & Tools Used</span>
           </div>
           <div className="stat" title="Projects built with passion and precision">
-            <span className="stat-number" data-count="0">0</span>
+            <span className="stat-number" data-count="2">0</span>
             <span className="stat-label">Projects Completed</span>
           </div>
         </div>

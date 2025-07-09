@@ -42,3 +42,25 @@ body.light-theme .timeline-dot {
   border: 2px solid #fff;
   background: var(--accent-color);
 }
+
+/* Monochrome Inversion: Dark Theme */
+body.dark-theme .experience,
+body.dark-theme .timeline-content h4,
+body.dark-theme .timeline-content p,
+body.dark-theme .timeline-dot {
+  background: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+  filter: grayscale(100%) contrast(100%);
+}
+
+/* Monochrome Inversion: Light Theme */
+body.light-theme .experience,
+body.light-theme .timeline-content h4,
+body.light-theme .timeline-content p,
+body.light-theme .timeline-dot {
+  background: #fff !important;
+  color: #000 !important;
+  border-color: #000 !important;
+  filter: grayscale(100%) contrast(100%);
+} 

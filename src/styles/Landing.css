@@ -1,21 +1,22 @@
 .landing-container {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   height: 100vh;
   width: 100vw;
-  background-color: #0b0c1e;
+  background-color: #000000;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   cursor: pointer;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Times New Roman';
   transition: opacity 0.6s ease;
-  z-index: 1;
-  border: 50px solid rgba(255, 255, 255, 0.08);
+  z-index: 9999;
+  border: 35px solid rgba(255, 255, 255, 0.08);
   box-sizing: border-box;
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0, 204, 255, 0.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .animated-background {
@@ -40,7 +41,7 @@
 
 .background-text {
   position: absolute;
-  font-size: 40vw;
+  font-size: 52vw;
   color: rgba(255, 255, 255, 0.050);
   font-weight: 300;
   top: 50%;
@@ -55,17 +56,16 @@
 }
 
 .center-box {
-  z-index: 2;
+  z-index: 1;
   text-align: center;
   background: white;
-  color: #0b0c1e;
+  color: #ffffff;
   padding: 1.5rem 2rem;
-  border-radius: 5px;
   box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
   animation: fadeIn 1.5s ease;
   max-width: 90%;
-  width: 450px;
-  transition: transform 0.3s ease;
+  width: 600px;
+  transition: transform 0.7s ease;
 }
 
 .center-box:hover {
@@ -74,17 +74,18 @@
 
 .landing-title {
   font-size: 2.2rem;
-  font-weight: 700;
+  font-weight: 300;
   letter-spacing: 2.5px;
   margin-bottom: 0.75rem;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  font-family: 'Times New Roman', sans-serif;
+  background: linear-gradient(90deg, #000000);
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .landing-subtitle {
-  font-size: 0.05rem;
-  color: #444;
+  font-size: 0.90rem;
+  color: #000000;
   font-weight: 500;
   letter-spacing: 1px;
   margin-bottom: 0.5rem;
@@ -93,7 +94,7 @@
 
 .landing-tagline {
   font-size: 1rem;
-  color: #666;
+  color: #000000;
   font-style: italic;
   margin-bottom: 1.5rem;
   opacity: 0.85;
@@ -126,21 +127,26 @@
   position: fixed;
   width: 200px;
   height: 200px;
-  background: rgba(0, 198, 255, 0.15);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
   border-radius: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.5);
   pointer-events: none;
-  animation: rippleFade 0.6s ease-out forwards;
-  z-index: 9999;
+  animation: rippleFade 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  z-index: 99999;
+  filter: blur(1px);
 }
 
 @keyframes rippleFade {
-  from {
+  0% {
     transform: translate(-50%, -50%) scale(0.5);
-    opacity: 0.6;
+    opacity: 0.4;
   }
-  to {
-    transform: translate(-50%, -50%) scale(2);
+  60% {
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.5);
     opacity: 0;
   }
 }

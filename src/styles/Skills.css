@@ -22,20 +22,18 @@
   margin-bottom: 0.25rem;
 }
 
-.meter {
-  height: 10px;
-  background: #ddd;
-  border-radius: 20px;
-  overflow: hidden;
+/* Monochrome Inversion: Dark Theme */
+body.dark-theme .list-info li,
+body.dark-theme .skill span {
+  background: #000 !important;
+  color: #fff !important;
+  filter: grayscale(100%) contrast(100%);
 }
 
-.meter > div {
-  height: 100%;
-  background: linear-gradient(to right, #00ccff, #a785ff);
-  border-radius: 20px;
-  transition: width 1s ease-out;
-}
-
-body.light-theme .meter > div {
-  background: linear-gradient(to right, #6c63ff, #ff6b81);
+/* Monochrome Inversion: Light Theme */
+body.light-theme .list-info li,
+body.light-theme .skill span {
+  background: #fff !important;
+  color: #000 !important;
+  filter: grayscale(100%) contrast(100%);
 }

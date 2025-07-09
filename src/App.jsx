@@ -9,15 +9,17 @@ import Stats from "./pages/Stats";
 import About from "./pages/About";
 import Experience from "./pages/Experience";
 import Skills from "./pages/Skills";
+import ProjectShowcase from "./pages/ProjectShowcase";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import Footer from "./pages/Footer";
+import SocialBar from "./pages/SocialBar";
 
 function App() {
   const containerRef = useRef(null);
   const [theme, setTheme] = useState("dark");
 
-  //AOS animation setup
+  // AOS animation setup
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -26,7 +28,7 @@ function App() {
     });
   }, []);
 
-  //Scroll progress bar
+  // Scroll progress bar
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -42,7 +44,7 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  //Load saved theme
+  // Load saved theme
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
     if (storedTheme === "light") {
@@ -51,7 +53,7 @@ function App() {
     }
   }, []);
 
-  //Toggle theme
+  // Toggle theme
   const toggleTheme = () => {
     const isLight = document.body.classList.toggle("light-theme");
     const newTheme = isLight ? "light" : "dark";
@@ -63,11 +65,13 @@ function App() {
     <div className="portfolio-container" ref={containerRef}>
       <div className="scroll-progress-bar-vertical" id="scrollProgressBar"></div>
       <Navbar theme={theme} toggleTheme={toggleTheme} />
+      <SocialBar /> {/* ✅ Social bar added here */}
       <Hero />
       <Stats />
       <About />
       <Experience />
       <Skills />
+      <ProjectShowcase />
       <Gallery />
       <Contact />
       <Footer />
