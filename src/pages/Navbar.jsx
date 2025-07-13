@@ -44,7 +44,7 @@ function Navbar({ theme, toggleTheme }) {
         </li>
         <li>
           <a href="#gallery" className={activeSection === "gallery" ? "active" : ""}>
-            Certificates & Gallery
+            Certificates
           </a>
         </li>
         <li>
